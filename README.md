@@ -25,8 +25,21 @@ _“This rule provides functional testing of a single Activity. When launchActiv
 
 8. The main class for testing with Robotium is Solo. Solo is initialized with the instrumentation of the test case and the first activity to test.
 ```
+import android.app.Activity;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;
+import android.widget.EditText;
+import android.widget.ListView;
 import com.robotium.solo.Solo;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 /**
 * Test class for MainActivity. All the UI tests are written here. Robotium test framework is used
 */
@@ -127,7 +140,6 @@ public void tearDown() throws Exception{
 
 13. Completed MainActivityTest class:
 ```
-package com.example.simpleparadox.listycity;
 
 import android.app.Activity;
 
