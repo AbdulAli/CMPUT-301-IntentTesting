@@ -75,17 +75,17 @@ public void checkList(){
 // Asserts that the current activity is the MainActivity. Otherwise, show “Wrong Activity”
    solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
 
-   solo.clickOnButton("ADD CITY"); //Click ADD CITY Button
+   solo.clickOnView(solo.getView(R.id.button_add)); //Click ADD CITY Button
 
    //Get view for EditText and enter a city name
    solo.enterText((EditText) solo.getView(R.id.editText_name), "Edmonton");
-   solo.clickOnButton("CONFIRM"); //Select CONFIRM Button
+   solo.clickOnView(solo.getView(R.id.button_confirm)); //Select CONFIRM Button
    solo.clearEditText((EditText) solo.getView(R.id.editText_name)); //Clear the EditText
 
    /* True if there is a text: Edmonton on the screen, wait at least 2 seconds and find     minimum one match. */
    assertTrue(solo.waitForText("Edmonton", 1, 2000));
 
-   solo.clickOnButton("ClEAR ALL"); //Select ClEAR ALL
+   solo.clickOnView(solo.getView(R.id.button_clear)); //Select ClEAR ALL
    //True if there is no text: Edmonton on the   screen
    assertFalse(solo.searchText("Edmonton")); 
 }
@@ -100,9 +100,9 @@ public void checkList(){
 public void checkCiyListItem(){
    solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
 
-   solo.clickOnButton("ADD CITY");
+   solo.clickOnView(solo.getView(R.id.button_add));
    solo.enterText((EditText) solo.getView(R.id.editText_name), "Edmonton");
-   solo.clickOnButton("CONFIRM");
+   solo.clickOnView(solo.getView(R.id.button_confirm));
    solo.waitForText("Edmonton", 1, 2000);
 
    // Get MainActivity to access its variables and methods.
@@ -185,18 +185,18 @@ public class MainActivityTest{
      //Asserts that the current activity is the MainActivity. Otherwise, show “Wrong Activity”
        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
 
-       solo.clickOnButton("ADD CITY"); //Click ADD CITY Button
+       solo.clickOnView(solo.getView(R.id.button_add)); //Click ADD CITY Button
 
        //Get view for EditText and enter a city name
        solo.enterText((EditText) solo.getView(R.id.editText_name), "Edmonton");
-       solo.clickOnButton("CONFIRM"); //Select CONFIRM Button
+       solo.clickOnView(solo.getView(R.id.button_confirm)); //Select CONFIRM Button
        solo.clearEditText((EditText) solo.getView(R.id.editText_name)); //Clear the EditText
 
        /* True if there is a text: Edmonton on the screen, wait at least 2 seconds and
        find minimum one match. */
        assertTrue(solo.waitForText("Edmonton", 1, 2000));
 
-       solo.clickOnButton("ClEAR ALL"); //Select ClEAR ALL
+       solo.clickOnView(solo.getView(R.id.button_clear)); //Select ClEAR ALL
        //True if there is no text: Edmonton on the   screen
 
        assertFalse(solo.searchText("Edmonton"));
@@ -210,9 +210,9 @@ public class MainActivityTest{
    public void checkCiyListItem(){
        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
 
-       solo.clickOnButton("ADD CITY");
+       solo.clickOnView(solo.getView(R.id.button_add));
        solo.enterText((EditText) solo.getView(R.id.editText_name), "Edmonton");
-       solo.clickOnButton("CONFIRM");
+       solo.clickOnView(solo.getView(R.id.button_confirm));
        solo.waitForText("Edmonton", 1, 2000);
        // Get MainActivity to access its variables and methods.
        MainActivity activity = (MainActivity) solo.getCurrentActivity();
@@ -231,4 +231,3 @@ public class MainActivityTest{
    }
 }
 ```
-
